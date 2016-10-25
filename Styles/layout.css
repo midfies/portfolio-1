@@ -1,0 +1,12 @@
+
+
+
+.header-section {
+  max-width: 80%;
+}
+
+@media only screen and (min-width: 640px) {
+  .header-section {
+    padding: .1em .1em .1em 2em;
+    float: none;
+  }
