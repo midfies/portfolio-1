@@ -1,5 +1,5 @@
 'use strict';
-var projectInfo = [
+var projectInfo = 
   {
     title:       'Project 1',
     category:    '',
