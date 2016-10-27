@@ -33,7 +33,16 @@
     <!-- all sections scroll and use different background images -->
     <!-- keep left 1/4 of page a header/nav div -->
         <section class="projects">
-          <article class="template" data-category="cat">
+          <div>
+          <ul id="filters">
+            <li>
+              <select id="project-filter">
+                <option value="">-- Filter by Project --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <article class="template" data-category="cat">
             <header>
               <h1>Title</h1>
               <div class="byline">
