@@ -10,19 +10,23 @@
   </head>
   <body>
 
-    <header class="">
+    <header class="document-header">
       <section class="header-section">
+        <div id="profile-pic-div">
+          <img id="profile-pic" src="http://placehold.it/150x150">
+        </div>
         <h1>
           Daniel Becker
         </h1>
+        <h3>DEVELOPER X ADVENTURER</h3>
       </section>
       <nav class="main-nav">
         <!-- when opened, cover half of page(or whole page) -->
         <div class="icon-menu"><img src='img/menu_icon.svg'></div>
         <!-- make icon-menu animate on hover -->
         <ul>
-          <li><a href="#" class=""> Home</a></li>
-          <li><a href="#" class=""> Portfolio</a></li>
+          <li class="tab" data-content="projects"><a href="#" class=""> Home</a></li>
+          <li class="tab" data-content="about"><a href="#" class=""> Portfolio</a></li>
           <li><a href="" target="_blank" class="">About</a></li>
           <li><a href="http://github.com/dbecker4130" target="_blank" class=""> GitHub</a></li>
         </ul>
@@ -32,8 +36,17 @@
       <main>
     <!-- all sections scroll and use different background images -->
     <!-- keep left 1/4 of page a header/nav div -->
-        <section class="projects">
-          <article class="template" data-category="cat">
+        <section id="projects" class="tab-content">
+          <div>
+          <ul id="filters">
+            <li>
+              <select id="project-filter">
+                <option value="">-- Filter by Project --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+        <article class="template" data-category="cat">
             <header>
               <h1>Title</h1>
               <div class="byline">
@@ -41,6 +54,7 @@
               </div>
             </header>
           <section class="project-body"></section>
+          <a href="#" class="read-on">Read on &rarr;</a>
         </article>
 
 
