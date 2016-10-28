@@ -3,7 +3,7 @@ var projectView = {};
 projectView.populateFilters = function() {
   $('article').not('.template').each(function() {
     var projectName, optionTag;
-    projectName = $(this).find('address a').text();
+    projectName = $(this).find('h1').text();
     optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
     $('#project-filter').append(optionTag);
 
@@ -18,7 +18,7 @@ projectView.handleProjectFilter = function() {
 
     } else {
       $('article').fadeIn();
-      // $('project.template').hide();
+      $('article.template').hide();
 
     }
     // $('#project-filter').val('');
