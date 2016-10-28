@@ -2,11 +2,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title> Daniel Becker Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <title> Daniel Becker Portfolio</title>
+
+    <script id="article-template" type="text/x-handlebars-template">
+        <article class="clearfix" data-title="{{title}}">
+          <header>
+            <h1>{{title}}</h1>
+          </header>
+          <section class="article-body">{{{body}}}</section>
+          <a href="#" class="read-on">Read on &rarr;</a>
+        </article>
+      </script>
+
   </head>
   <body>
 
@@ -38,32 +49,36 @@
     <!-- keep left 1/4 of page a header/nav div -->
         <section id="projects" class="tab-content">
           <div>
-          <ul id="filters">
-            <li>
-              <select id="project-filter">
-                <option value="">-- Filter by Project --</option>
-              </select>
-            </li>
-          </ul>
-        </div>
-        <article class="template" data-category="cat">
-            <header>
-              <h1>Title</h1>
-              <div class="byline">
-                <address><a href="">Project</a></address>
-              </div>
-            </header>
-          <section class="project-body"></section>
-          <a href="#" class="read-on">Read on &rarr;</a>
-        </article>
-
+            <ul id="filters">
+              <li>
+                <select id="project-filter">
+                  <option value="">-- Filter by Project --</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section id="about" class="tab-content">
+          <header>
+            Welcome to my Portfolio
+          </header>
+          <section>
+            <h1>Some of my intrests:</h1>
+            <ul>
+              <li>Coding</li>
+              <li>Action Sports</li>
+              <li>Hanging out with positive people</li>
+            </ul>
+          </section>
+        </section>
 
       </main>
-      <script
-      src="https://code.jquery.com/jquery-3.1.1.min.js"
-      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-      crossorigin="anonymous"></script>
-    <script src="scripts/blogArticles.js"></script>
-    <script src="scripts/article.js"></script>
+    <footer>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="scripts/projectInfo.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/projectView.js"></script>
   </body>
 </html>
