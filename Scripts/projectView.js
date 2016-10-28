@@ -14,19 +14,19 @@ projectView.handleProjectFilter = function() {
   $('#project-filter').on('change', function() {
     if ($(this).val()) {
       $('article').hide();
-      $('article[data-project="' + $(this).val() + '"]').fadeIn();
+      $('article[data-title="' + $(this).val() + '"]').fadeIn();
 
     } else {
       $('article').fadeIn();
-      $('article.template').hide();
+      // $('project.template').hide();
 
     }
-    $('#project-filter').val('');
+    // $('#project-filter').val('');
   });
 };
 
 projectView.handleMainNav = function () {
-  $('.main-nav').on('click', '.tab', function() {
+  $('.main-nav').on('click', '.tab', function(noRefresh) {
     $('.tab-content').hide();
     $('#' + $(this).data('content')).fadeIn();
   });
@@ -35,9 +35,9 @@ projectView.handleMainNav = function () {
 
 projectView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
-  $('#articles').on('click', 'a.read-on', function(noRefresh) {
+
+  $('#projects').on('click', 'a.read-on', function(noRefresh) {
     noRefresh.preventDefault();
-    $('.article-body').show();
     $(this).parent().find('*').fadeIn();
     $(this).hide();
   });

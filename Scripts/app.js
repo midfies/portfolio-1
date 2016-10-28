@@ -8,10 +8,10 @@ function Project (options) {
 Project.prototype.toHtml = function() {
 
   var templateScript = $('#article-template').html();
-  console.log(templateScript);
+  // console.log(templateScript);
   var theTemplate = Handlebars.compile(templateScript);
   // var compiledHtml = theTemplate(ourLocalData);
-  console.log(this);
+  // console.log(this);
   return theTemplate(this);
 
 };
