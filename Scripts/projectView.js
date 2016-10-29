@@ -38,10 +38,20 @@ projectView.setTeasers = function() {
 
   $('#projects').on('click', 'a.read-on', function(noRefresh) {
     noRefresh.preventDefault();
-    $(this).parent().find('*').fadeIn();
-    $(this).hide();
+    if($(this).text() === 'Read on →') {
+      $(this).parent().find('*').fadeIn();
+      $(this).html('Show Less &larr;');
+    } else {
+      $('body').animate({
+        scrollTop: ($(this).parent().offset().top)
+      },200);
+      $(this).html('Read on &rarr;');
+      $(this).parent().find('.article-body *:nth-of-type(n+2)').hide();
+
+    }
   });
 };
+
 
 projectView.populateFilters();
 projectView.handleProjectFilter();
