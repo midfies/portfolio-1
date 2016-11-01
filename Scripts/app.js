@@ -5,6 +5,8 @@ function Project (options) {
   this.body = options.body;
 };
 
+Project.allProjects = [];
+
 Project.prototype.toHtml = function() {
 
   var templateScript = $('#article-template').html();
