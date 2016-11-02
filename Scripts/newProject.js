@@ -30,4 +30,4 @@ newProject.create = function() {
   $('#article-json').val(JSON.stringify(formProject) + ',');
 };
 
-projectView.initNewProjectPage();
+// projectView.initNewProjectPage();

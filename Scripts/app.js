@@ -13,11 +13,11 @@ function Project (options) {
 
 Project.allProjects = [];
 
-Project.prototype.toHtml = function() {
+Project.prototype.toHtml = function(templateScript) {
 
-  var templateScript = $('#article-template').html();
+  // var templateScript = $('#article-template').html();
   // console.log(templateScript);
-  var theTemplate = Handlebars.compile(templateScript);
+  var theTemplate = Handlebars.compile($(templateScript).text());
   // var compiledHtml = theTemplate(ourLocalData);
   // console.log(this);
   this.body = marked(this.body);
@@ -27,11 +27,11 @@ Project.prototype.toHtml = function() {
 
 Project.loadAll = function(inputData) {
   inputData.sort(function(a,b) {
-    return (new Project);
+    // return (new Project);
   })
-  .forEach(function(ele) {
-    Project.allProjects.push(new Project(ele));
-  });
+   .forEach(function(ele) {
+     Project.allProjects.push(new Project(ele));
+   });
 };
 
 Project.fetchAll = function() {
@@ -45,13 +45,14 @@ Project.fetchAll = function() {
     2. Then we can render the index page.  */
   } else {
     console.log('did not find projectInfo in localStorage');
-    $.getJSON('../../data/projectInfo.json', 'GET', function(projectInfo) {
+    $.getJSON('data/projectInfo.json', function(projectInfo) {
       Project.loadAll(projectInfo);
-      localStorage.setItem('blogArticles', JSON.stringify(projectInfo));
+      localStorage.setItem('projectInfo', JSON.stringify(projectInfo));
       projectView.renderIndexPage();
 
-
-
+    });
+  }
+};
 // projectInfo.forEach(function(ele) {
 //   projects.push(new Project(ele));
 // });

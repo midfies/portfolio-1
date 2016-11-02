@@ -53,6 +53,19 @@ projectView.setTeasers = function() {
   });
 };
 
+projectView.renderIndexPage = function() {
+  Project.allProjects.forEach(function(a) {
+    $('#projects').append(a.toHtml('#article-template'));
+    if($('#project-filter option:contains("'+ a.project + '")').length === 0) {
+      $('#project-filter').append(a.toHtml('project-filter-template'));
+    };
+  });
+  projectView.handleProjectFilter();
+  projectView.handleMainNav();
+  projectView.setTeasers();
+
+};
+
 // projectView.render = function() {
 //   articles.forEach(function(a) {
 //     $('#projects').append(a.toHtml('#article-template'));
@@ -66,7 +79,6 @@ projectView.setTeasers = function() {
 //
 // projectView.render();
 
-projectView.populateFilters();
-projectView.handleProjectFilter();
-projectView.handleMainNav();
-projectView.setTeasers();
+// projectView.populateFilters();
+
+Project.fetchAll();
