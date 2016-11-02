@@ -55,14 +55,15 @@ projectView.setTeasers = function() {
 
 projectView.renderIndexPage = function() {
   Project.allProjects.forEach(function(a) {
-    $('#projects').append(a.toHtml('#article-template'));
-    if($('#project-filter option:contains("'+ a.project + '")').length === 0) {
+    $('#articles').append(a.toHtml('#article-template'));
+    if($('#project-filter option:contains("'+ a.title + '")').length === 0) {
       $('#project-filter').append(a.toHtml('project-filter-template'));
     };
   });
   projectView.handleProjectFilter();
   projectView.handleMainNav();
   projectView.setTeasers();
+  // projectView.populateFilters();
 
 };
 
@@ -79,6 +80,5 @@ projectView.renderIndexPage = function() {
 //
 // projectView.render();
 
-// projectView.populateFilters();
 
 Project.fetchAll();

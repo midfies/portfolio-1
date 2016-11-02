@@ -18,7 +18,7 @@ Project.prototype.toHtml = function(templateScript) {
   // var templateScript = $('#article-template').html();
   // console.log(templateScript);
   var theTemplate = Handlebars.compile($(templateScript).text());
-  // var compiledHtml = theTemplate(ourLocalData);
+
   // console.log(this);
   this.body = marked(this.body);
   return theTemplate(this);
@@ -26,12 +26,10 @@ Project.prototype.toHtml = function(templateScript) {
 };
 
 Project.loadAll = function(inputData) {
-  inputData.sort(function(a,b) {
+  inputData.forEach(function(ele) {
+    Project.allProjects.push(new Project(ele));
     // return (new Project);
-  })
-   .forEach(function(ele) {
-     Project.allProjects.push(new Project(ele));
-   });
+  });
 };
 
 Project.fetchAll = function() {
