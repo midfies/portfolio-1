@@ -20,7 +20,7 @@ Project.prototype.toHtml = function(templateScript) {
   var theTemplate = Handlebars.compile($(templateScript).text());
 
   // console.log(this);
-  this.body = marked(this.body);
+  this.body = (this.body);
   return theTemplate(this);
 
 };
@@ -42,9 +42,7 @@ Project.fetchAll = function() {
     console.log('projectInfo JSON parsed from local storage');
     Project.loadAll(parsedArticles);
     projectView.renderIndexPage();
-    /* When our data is already in localStorage:
-    1. We can process and load it,
-    2. Then we can render the index page.  */
+
   } else {
     console.log('did not find projectInfo in localStorage');
     $.getJSON('/data/projectInfo.json', function(projectInfo) {
