@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <title> Daniel Becker Portfolio</title>
@@ -16,10 +16,15 @@
           <section class="article-body">{{{body}}}</section>
           <a href="#" class="read-on">Read on &rarr;</a>
         </article>
-      </script>
-      <script id="project-filter-template" type="text/x-handlebars-template">
+    </script>
+
+    <script id="project-filter-template" type="text/x-handlebars-template">
       <option value="{{title}}">{{title}}</option>
-     </script>
+    </script>
+
+    <script id="stats-template" type="text/x-handlebars-template">
+      <li><strong>{{title}}</strong>: {{wordCount} words written</li>
+    </script>
 
   </head>
   <body>
@@ -75,14 +80,20 @@
           </section>
         </section>
 
+        <section id="project-stats">
+          <h1>Project stats</h1>
+          <dt>Total projects:</dt> <dd class="projects"></dd>
+          <dt>Total words:</dt> <dd class="words"></dd>
+        </section>
+
       </main>
     <footer>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="vendor/scripts/marked.js"></script>
-    <script src="vendor/scripts/highlight.pack.js"></script>
-    <script src="scripts/projectInfo.js"></script>
+    <!-- <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/highlight.pack.js"></script> -->
+
     <script src="scripts/app.js"></script>
     <script src="scripts/projectView.js"></script>
   </body>

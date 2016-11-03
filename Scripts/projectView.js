@@ -1,25 +1,15 @@
 var projectView = {};
 
-projectView.populateFilters = function() {
-  $('article').not('.template').each(function() {
-    var projectName, optionTag;
-    projectName = $(this).find('h1').text();
-    optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
-    $('#project-filter').append(optionTag);
-
-  });
-};
-
-// projectView.render = function() {
-//   articles.forEach(function(a) {
-//     $('#projects').append(a.toHtml('#article-template'));
-//     $('#project-filter').append(a.toHtml('#project-filter-template'));
+// projectView.populateFilters = function() {
+//   $('article').not('.template').each(function() {
+//     var projectName, optionTag;
+//     projectName = $(this).find('h1').text();
+//     optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
+//     $('#project-filter').append(optionTag);
 //
 //   });
-//   $('pre code').each(function(i, block) {
-//     hljs.highlightBlock(block);
-//   });
 // };
+
 
 projectView.handleProjectFilter = function() {
   $('#project-filter').on('change', function() {
@@ -63,35 +53,19 @@ projectView.setTeasers = function() {
   });
 };
 
-// projectView.initNewArticlePage = function() {
-//   $('#article-json').on('focus', function() {
-//     $(this).select();
-//   });
-//
-//   $('#new-form').on('change', articleView.create);
-// };
-//
-// articleView.create = function() {
-//   $('#article-preview').empty().fadeIn();
-//
-//   var formArticle = new Article({
-//     title: $('#article-title').val(),
-//     body: $('#article-body').val(),
-//     publishedOn: $('#article-published:checked').length ? new Date() : 'draft'
-//   });
-//   $('#article-preview').append(formArticle.toHtml('#article-template'));
-//
-//   $('pre code').each(function(i, block) {
-//     hljs.highlightBlock(block);
-//   });
-//
-//   $('#article-json').val(JSON.stringify(formArticle) + ',');
-// };
-//
-// projectView.initNewArticlePage();
-// projectView.render();
+projectView.renderIndexPage = function() {
+  Project.allProjects.forEach(function(a) {
+    $('#projects').append(a.toHtml('#article-template'));
+    if($('#project-filter option:contains("'+ a.title + '")').length === 0) {
+      $('#project-filter').append(a.toHtml('#project-filter-template'));
+    };
+  });
+  projectView.handleProjectFilter();
+  projectView.handleMainNav();
+  projectView.setTeasers();
+  // projectView.populateFilters();
 
-projectView.populateFilters();
-projectView.handleProjectFilter();
-projectView.handleMainNav();
-projectView.setTeasers();
+};
+
+
+Project.fetchAll();
