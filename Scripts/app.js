@@ -54,10 +54,30 @@ Project.fetchAll = function() {
     });
   }
 };
-// projectInfo.forEach(function(ele) {
-//   projects.push(new Project(ele));
-// });
-//
-// projects.forEach(function(article) {
-//   $('#projects').append(article.toHtml());
-// });
+
+Project.wordCount = function() {
+  return Project.allProjects.map(function(project) {
+  //Grab the word count from each project body.
+    console.log(project.body.split(' ').length);
+    return project.body.split(' ').length;
+  })
+
+    .reduce(function(prev, next) {
+
+      return prev + next;
+    });
+};
+Project.renderAllStats = function() {
+  var statsRender = Handlebars.compile($('#stats-template').html());
+  $('#project-stats .projects').text(Project.allProjects.length);
+
+
+  $('#project-stats .words').text(Project.wordCount());
+
+  Project.wordCount().forEach(function(wordCountObj) {
+    $('#project-stats').append(statsRender(wordCountObj));
+  });
+
+};
+
+// Project.fetchAll(Project.renderAllStats);
