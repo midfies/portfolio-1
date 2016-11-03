@@ -29,6 +29,10 @@ Project.loadAll = function(inputData) {
   inputData.forEach(function(ele) {
     Project.allProjects.push(new Project(ele));
     // return (new Project);
+
+    // projectInfo.forEach(function(ele) {
+    //   projects.push(new Project(ele));
+    // });
   });
 };
 
@@ -43,7 +47,8 @@ Project.fetchAll = function() {
     2. Then we can render the index page.  */
   } else {
     console.log('did not find projectInfo in localStorage');
-    $.getJSON('data/projectInfo.json', function(projectInfo) {
+    $.getJSON('/data/projectInfo.json', function(projectInfo) {
+      console.log(projectInfo);
       Project.loadAll(projectInfo);
       localStorage.setItem('projectInfo', JSON.stringify(projectInfo));
       projectView.renderIndexPage();
