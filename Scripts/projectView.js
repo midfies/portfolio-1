@@ -1,14 +1,14 @@
 var projectView = {};
 
-projectView.populateFilters = function() {
-  $('article').not('.template').each(function() {
-    var projectName, optionTag;
-    projectName = $(this).find('h1').text();
-    optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
-    $('#project-filter').append(optionTag);
-
-  });
-};
+// projectView.populateFilters = function() {
+//   $('article').not('.template').each(function() {
+//     var projectName, optionTag;
+//     projectName = $(this).find('h1').text();
+//     optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
+//     $('#project-filter').append(optionTag);
+//
+//   });
+// };
 
 
 projectView.handleProjectFilter = function() {
@@ -66,19 +66,6 @@ projectView.renderIndexPage = function() {
   // projectView.populateFilters();
 
 };
-
-// projectView.render = function() {
-//   articles.forEach(function(a) {
-//     $('#projects').append(a.toHtml('#article-template'));
-//     $('#project-filter').append(a.toHtml('#project-filter-template'));
-//
-//   });
-//   $('pre code').each(function(i, block) {
-//     hljs.highlightBlock(block);
-//   });
-// };
-//
-// projectView.render();
 
 
 Project.fetchAll();

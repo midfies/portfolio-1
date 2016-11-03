@@ -26,7 +26,7 @@ Project.prototype.toHtml = function(templateScript) {
 };
 
 Project.loadAll = function(inputData) {
-  inputData.forEach(function(ele) {
+  inputData.map(function(ele) {
     Project.allProjects.push(new Project(ele));
     // return (new Project);
 
