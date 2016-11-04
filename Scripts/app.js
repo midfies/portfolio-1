@@ -50,10 +50,8 @@ Project.wordCount = function() {
   })
     .reduce(function(cur, next) {
       return cur + next;
-
     });
 };
-
 
 Project.renderAllStats = function() {
   $('#project-stats .words').text(Project.wordCount());

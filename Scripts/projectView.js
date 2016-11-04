@@ -1,16 +1,5 @@
 var projectView = {};
 
-// projectView.populateFilters = function() {
-//   $('article').not('.template').each(function() {
-//     var projectName, optionTag;
-//     projectName = $(this).find('h1').text();
-//     optionTag = '<option value="' + projectName + '">' + projectName + '</option>';
-//     $('#project-filter').append(optionTag);
-//
-//   });
-// };
-
-
 projectView.handleProjectFilter = function() {
   $('#project-filter').on('change', function() {
     if ($(this).val()) {
@@ -22,10 +11,9 @@ projectView.handleProjectFilter = function() {
       $('article.template').hide();
 
     }
-
   });
 };
-
+// TODO make Home nav to projects, make About scroll to bottom of page, hide stats on about page
 projectView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function(noRefresh) {
     $('.tab-content').hide();
@@ -48,7 +36,7 @@ projectView.setTeasers = function() {
       },200);
       $(this).html('Read on &rarr;');
       $(this).parent().find('.article-body *:nth-of-type(n+2)').hide();
-
+// TODO change style of Read on and Show more labels
     }
   });
 };
@@ -63,9 +51,7 @@ projectView.renderIndexPage = function() {
   projectView.handleProjectFilter();
   projectView.handleMainNav();
   projectView.setTeasers();
-  // projectView.populateFilters();
 
 };
-
 
 Project.fetchAll(Project.renderAllStats);

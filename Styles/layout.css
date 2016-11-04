@@ -4,6 +4,7 @@
 }
 #background-pic {
   position: absolute;
+  /*TODO size to header-section*/
 }
 
 .header-section {
@@ -11,6 +12,8 @@
   border: 2px solid blue;
   position: relative;
   margin-top: 50px;
+/*TODO fix centering */
+
 }
 #profile-pic-div {
   margin-top: 50px;
