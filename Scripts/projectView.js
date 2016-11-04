@@ -68,4 +68,4 @@ projectView.renderIndexPage = function() {
 };
 
 
-Project.fetchAll();
+Project.fetchAll(Project.renderAllStats);
