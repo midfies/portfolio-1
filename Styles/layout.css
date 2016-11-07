@@ -5,14 +5,14 @@
   position: relative;
 }
 #background-pic {
-  position: absolute;
+  /*position: absolute;*/
 }
 
  .header-section {
   max-width: 100%;
+  height: auto;
   border: 2px solid blue;
   position: relative;
-  margin-top: 50px;
 
 }
 
@@ -22,4 +22,18 @@
     padding: .1em .1em .1em 1em;
     float: none;
   }
+}
+
+#projects {
+  border: 2px solid black;
+}
+.clearfix {
+  border: 1px dashed red;
+  float: left;
+  height: auto;
+  width: 400px;
+}
+#project-stats {
+  border: 1px dashed blue;
+  overflow: auto;
 }
