@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Lato|Raleway" rel="stylesheet">
 
     <script id="article-template" type="text/x-handlebars-template">
         <article class="clearfix" data-title="{{title}}">
@@ -25,30 +26,27 @@
   </head>
   <body>
 
-    <header class="document-header"><img src="img/cropped-hurricane-ridge.jpg" id="background-pic">
+    <header class="document-header">
+
+      <img src="img/cropped-hurricane-ridge.jpg" id="background-pic">
       <section class="header-section">
-        <div id="profile-pic-div">
-          <img id="profile-pic" src="http://placehold.it/150x150">
-        </div>
         <h1>
-          Daniel Becker
+          <strong>Daniel Becker</strong>
         </h1>
         <h3>DEVELOPER X ADVENTURER</h3>
       <nav class="main-nav">
-        <!--TODO when opened, cover half of page(or whole page) -->
         <div class="icon-menu"><img src='img/menu_icon.svg'></div>
         <!--TODO make icon-menu animate on hover -->
         <ul>
           <!-- TODO link about and home page -->
-          <li class="tab" data-content="projects"><a href="#" class=""> Home</a></li>
-          <li class="tab" data-content="about"><a href="#" class=""> About</a></li>
+          <li class="tab" data-content="projects"><a href="#" class=""><img src="img/home.png" id="home-logo"></a></li>
+          <li class="tab" data-content="about"><a href="#" class=""><img src="img/about.jpeg" id="about-logo"></a></li>
           <!-- <li><a href="" target="_blank" class="">About</a></li> -->
-          <li><a href="http://github.com/dbecker4130" target="_blank" class=""> GitHub</a></li>
+          <li><a href="http://github.com/dbecker4130" target="_blank" class=""><img src="img/github-logo.jpg" id="git-logo"></a></li>
         </ul>
-      </section>
-
       </nav>
-    </header>
+    </section>
+   </header>
       <main>
     <!-- all sections scroll and use different background images -->
     <!-- keep left 1/4 of page a header/nav div -->
@@ -87,7 +85,7 @@
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-  
+
 
     <script src="scripts/app.js"></script>
     <script src="scripts/projectView.js"></script>

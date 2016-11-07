@@ -2,6 +2,7 @@ var projectView = {};
 
 projectView.handleProjectFilter = function() {
   $('#project-filter').on('change', function() {
+    // event handler
     if ($(this).val()) {
       $('article').hide();
       $('article[data-title="' + $(this).val() + '"]').fadeIn();

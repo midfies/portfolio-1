@@ -3,6 +3,7 @@
   float:right;
   height: 50px;
   width: 50px;
+  
 }
 @media screen and (min-width: 0px) {
   .main-nav li {
@@ -20,5 +21,20 @@
 }
 
 .main-nav {
-  /*TODO add images to links*/
+  text-align: center;
+}
+
+#git-logo {
+  height: 30px;
+  width: 30px;
+}
+
+#home-logo {
+  height: 30px;
+  width: 30px;
+}
+
+#about-logo {
+  height: 30px;
+  width: 30px;
 }
