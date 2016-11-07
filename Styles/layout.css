@@ -1,32 +1,45 @@
 .document-header {
   border: 2px solid red;
-  height: 540px;
+  max-width: 100%;
+  height: auto;
+  position: relative;
 }
 #background-pic {
-  position: absolute;
-  /*TODO size to header-section*/
+  /*position: absolute;*/
 }
 
-.header-section {
+ .header-section {
   max-width: 100%;
+  height: auto;
   border: 2px solid blue;
   position: relative;
-  margin-top: 50px;
-/*TODO fix centering */
 
 }
-#profile-pic-div {
-  margin-top: 50px;
-  margin: 10px;
-}
-#profile-pic {
-  border: 2px solid red;
-  margin-left: 40%;
 
-}
+
 @media only screen and (min-width: 640px) {
   .header-section {
     padding: .1em .1em .1em 1em;
     float: none;
   }
+}
+
+#projects {
+  border: 2px solid black;
+}
+.clearfix {
+  border: 1px dashed black;
+  float: left;
+  height: auto;
+  width: 400px;
+}
+
+.read-on {
+  color: black;
+  text-decoration: none
+}
+
+#project-stats {
+  border: 1px dashed blue;
+  overflow: auto;
 }

@@ -2,6 +2,7 @@ var projectView = {};
 
 projectView.handleProjectFilter = function() {
   $('#project-filter').on('change', function() {
+    // event handler
     if ($(this).val()) {
       $('article').hide();
       $('article[data-title="' + $(this).val() + '"]').fadeIn();
@@ -13,6 +14,15 @@ projectView.handleProjectFilter = function() {
     }
   });
 };
+projectView.handleIconMenu = function() {
+  $('.icon-menu').on('click', function() {
+    $('.main-nav').fadeIn();
+  });
+
+
+};
+
+
 // TODO make Home nav to projects, make About scroll to bottom of page, hide stats on about page
 projectView.handleMainNav = function () {
   $('.main-nav').on('click', '.tab', function(noRefresh) {
@@ -51,7 +61,7 @@ projectView.renderIndexPage = function() {
   projectView.handleProjectFilter();
   projectView.handleMainNav();
   projectView.setTeasers();
-
+  projectView.handleIconMenu();
 };
 
 Project.fetchAll(Project.renderAllStats);
