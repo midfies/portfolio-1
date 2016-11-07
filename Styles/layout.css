@@ -28,11 +28,17 @@
   border: 2px solid black;
 }
 .clearfix {
-  border: 1px dashed red;
+  border: 1px dashed black;
   float: left;
   height: auto;
   width: 400px;
 }
+
+.read-on {
+  color: black;
+  text-decoration: none
+}
+
 #project-stats {
   border: 1px dashed blue;
   overflow: auto;
